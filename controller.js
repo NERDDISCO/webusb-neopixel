@@ -200,7 +200,7 @@ export default class Controller {
       } else {
         // Create an ArrayBuffer, because that is needed for WebUSB
         const buffer = Uint8Array.from(data)
-
+        this.leds = data;
         // Send data on Endpoint #4
         return resolve(this.device.transferOut(4, buffer))
       }
